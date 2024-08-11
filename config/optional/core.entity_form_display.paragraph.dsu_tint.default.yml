@@ -1,0 +1,130 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.dsu_tint.field_c_advanced_title
+    - field.field.paragraph.dsu_tint.field_c_settings
+    - field.field.paragraph.dsu_tint.field_c_text
+    - field.field.paragraph.dsu_tint.field_styles_connector
+    - field.field.paragraph.dsu_tint.field_tint_customizations
+    - paragraphs.paragraphs_type.dsu_tint
+  module:
+    - dsu_c_core
+    - field_group
+    - ln_tint_connector
+    - ln_tint_connector_styles
+    - paragraphs
+    - text
+third_party_settings:
+  field_group:
+    group_tint_group:
+      children:
+        - group_lightnest_tint
+        - group_tint_customizations
+      label: 'TINT group'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_lightnest_tint:
+      children:
+        - field_c_advanced_title
+        - field_c_text
+        - field_c_settings
+      label: 'Lightnest TINT'
+      region: content
+      parent_name: group_tint_group
+      weight: 7
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_tint_customizations:
+      children:
+        - field_styles_connector
+        - field_tint_customizations
+      label: 'TINT customizations'
+      region: content
+      parent_name: group_tint_group
+      weight: 8
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+_core:
+  default_config_hash: KCdhq7CTIEIeSQ1eIUBlyU1rF2QISFiuJXLV6gCPTfw
+id: paragraph.dsu_tint.default
+targetEntityType: paragraph
+bundle: dsu_tint
+mode: default
+content:
+  field_c_advanced_title:
+    type: string_html_tag_widget
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_c_settings:
+    type: ln_tint
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_c_text:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_styles_connector:
+    type: ln_tint_styles
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_test:
+    type: custom_ln_tint
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tint_customizations:
+    type: paragraphs
+    weight: 13
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

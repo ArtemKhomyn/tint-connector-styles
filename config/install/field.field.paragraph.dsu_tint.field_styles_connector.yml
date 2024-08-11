@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_styles_connector
+    - paragraphs.paragraphs_type.dsu_tint
+  module:
+    - dsu_c_core
+id: paragraph.dsu_tint.field_styles_connector
+field_name: field_styles_connector
+entity_type: paragraph
+bundle: dsu_tint
+label: 'Styles connector'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: serialized_settings_item

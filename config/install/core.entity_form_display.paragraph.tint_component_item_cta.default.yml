@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tint_component_item_cta.field_cta_tint_item_link
+    - field.field.paragraph.tint_component_item_cta.field_field_id_t_of_post
+    - paragraphs.paragraphs_type.tint_component_item_cta
+  module:
+    - dsu_c_core
+    - link
+_core:
+  default_config_hash: '-kSjaNrkuAXVXhFUKCTgoe5KlNosiottQAnGKolnqcg'
+id: paragraph.tint_component_item_cta.default
+targetEntityType: paragraph
+bundle: tint_component_item_cta
+mode: default
+content:
+  field_cta_tint_item_link:
+    type: link_default
+    weight: 7
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_field_id_t_of_post:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tint_c_item_link_text:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tint_c_item_url:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

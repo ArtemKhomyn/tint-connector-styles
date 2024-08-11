@@ -1,0 +1,72 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tint_customizations
+    - paragraphs.paragraphs_type.dsu_tint
+    - paragraphs.paragraphs_type.tint_component
+  module:
+    - entity_reference_revisions
+id: paragraph.dsu_tint.field_tint_customizations
+field_name: field_tint_customizations
+entity_type: paragraph
+bundle: dsu_tint
+label: 'TINT customizations'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      tint_component: tint_component
+    negate: 0
+    target_bundles_drag_drop:
+      dsu_tint:
+        weight: 16
+        enabled: false
+      layout_25_25_50:
+        weight: 17
+        enabled: false
+      layout_25_50_25:
+        weight: 18
+        enabled: false
+      layout_25_75:
+        weight: 19
+        enabled: false
+      layout_33_66:
+        weight: 20
+        enabled: false
+      layout_50_25_25:
+        weight: 21
+        enabled: false
+      layout_66_33:
+        weight: 22
+        enabled: false
+      layout_75_25:
+        weight: 23
+        enabled: false
+      layout_columns_1:
+        weight: 24
+        enabled: false
+      layout_columns_2:
+        weight: 25
+        enabled: false
+      layout_columns_20:
+        weight: 26
+        enabled: false
+      layout_columns_3:
+        weight: 27
+        enabled: false
+      layout_columns_4:
+        weight: 28
+        enabled: false
+      tint_component:
+        weight: 29
+        enabled: true
+      tint_component_item_cta:
+        weight: 30
+        enabled: false
+field_type: entity_reference_revisions

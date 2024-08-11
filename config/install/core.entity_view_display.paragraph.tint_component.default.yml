@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tint_component.field_cta_for_post
+    - paragraphs.paragraphs_type.tint_component
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: zFxAL-jBS_Qb8GKFwbbwzCv-R7pDblFf1EJv0XRBARI
+id: paragraph.tint_component.default
+targetEntityType: paragraph
+bundle: tint_component
+mode: default
+content:
+  field_cta_for_post:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_tint_c_api_key:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_tint_c_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_tint_c_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
