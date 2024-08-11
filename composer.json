@@ -1,0 +1,17 @@
+{
+    "name": "lightnest/ln_tint_connector_styles",
+    "type": "drupal-module",
+    "keywords": [
+        "tint",
+        "ugc"
+    ],
+    "license": "GPL-2.0+",
+    "require": {
+        "lightnest/ln_tint_connector": "^2.1",
+        "drupal/color_field": "^3.0",
+        "npm-asset/hammerjs": "^2.0",
+        "npm-asset/imagesloaded": "^4.1",
+        "npm-asset/masonry-layout": "^4.2",
+        "npm-asset/swiper": "^11.1"
+    }
+}

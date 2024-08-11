@@ -1,0 +1,105 @@
+<?php
+
+/**
+ * @file
+ * Module install file.
+ */
+
+use Symfony\Component\Yaml\Yaml;
+use Drupal\Core\Config\FileStorage;
+
+function ln_tint_connector_styles_install() {
+  $module_handler = \Drupal::service('module_handler');
+  $module_path = $module_handler->getModule('ln_tint_connector_styles')->getPath();
+  $config_dir = $module_path . '/config/optional';
+  // List the configuration files to import.
+  $configs = [
+    'core.entity_form_display.paragraph.dsu_tint.default',
+    'core.entity_view_display.paragraph.dsu_tint.default',
+  ];
+
+  // Load the configuration factory.
+  $config_factory = \Drupal::service('config.factory');
+  $storage = new FileStorage($config_dir);
+
+  foreach ($configs as $config_name) {
+    // Load the configuration data from the file.
+    $data = $storage->read($config_name);
+
+    if ($data !== FALSE) {
+      // Import the configuration, overriding the existing one if necessary.
+      $config = $config_factory->getEditable($config_name);
+      $config->setData($data);
+      $config->save();
+    }
+  }
+}
+
+
+/**
+ * Implements hook_uninstall().
+ */
+function ln_tint_connector_styles_uninstall() {
+  $config_names = [
+    'field.storage.paragraph.field_tint_t_mobile_posts_in_row',
+    'field.storage.paragraph.field_tint_t_load_more_posts',
+    'field.storage.paragraph.field_tint_t_dektop_posts_in_row',
+    'field.storage.paragraph.field_tint_post_index_search',
+    'field.storage.paragraph.field_tint_g_mobile_posts_in_row',
+    'field.storage.paragraph.field_tint_g_dektop_posts_in_row',
+    'field.storage.paragraph.field_tint_c_template',
+    'field.storage.paragraph.field_tint_c_slider_autoscroll',
+    'field.storage.paragraph.field_tint_c_share_button',
+    'field.storage.paragraph.field_tint_c_max_posts',
+    'field.storage.paragraph.field_tint_c_load_more_posts',
+    'field.storage.paragraph.field_field_id_t_of_post',
+    'field.field.paragraph.tint_component_item_cta.field_field_id_t_of_post',
+    'field.storage.paragraph.field_cta_for_post',
+    'paragraphs.paragraphs_type.tint_component',
+    'field.field.paragraph.tint_component.field_tint_t_mobile_posts_in_row',
+    'field.field.paragraph.tint_component.field_tint_t_load_more_posts',
+    'field.field.paragraph.tint_component.field_tint_t_dektop_posts_in_row',
+    'field.field.paragraph.tint_component.field_tint_post_index_search',
+    'field.field.paragraph.tint_component.field_tint_g_mobile_posts_in_row',
+    'field.field.paragraph.tint_component.field_tint_g_dektop_posts_in_row',
+    'field.field.paragraph.tint_component.field_tint_c_template',
+    'field.field.paragraph.tint_component.field_tint_c_slider_autoscroll',
+    'field.field.paragraph.tint_component.field_tint_c_share_button',
+    'field.field.paragraph.tint_component.field_tint_c_max_posts',
+    'field.field.paragraph.tint_component.field_tint_c_load_more_posts',
+    'paragraphs.paragraphs_type.tint_component_item_cta',
+    'field.storage.paragraph.field_cta_tint_item_link',
+    'field.field.paragraph.tint_component_item_cta.field_cta_tint_item_link',
+    'field.field.paragraph.tint_component.field_cta_for_post',
+    'core.entity_view_display.paragraph.tint_component_item_cta.default',
+    'core.entity_form_display.paragraph.tint_component_item_cta.default',
+    'core.entity_view_display.paragraph.tint_component.default',
+    'core.entity_form_display.paragraph.tint_component.default',
+    'field.storage.paragraph.field_tint_customizations',
+    'field.field.paragraph.tint_component.field_tint_comp_theme_color',
+    'field.field.paragraph.tint_component.field_tint_popup_bg_color',
+    'field.field.paragraph.tint_component.field_tint_text_color',
+    'field.storage.paragraph.field_activate_tint_custom',
+    'field.storage.paragraph.field_tint_comp_theme_color',
+    'field.storage.paragraph.field_tint_popup_bg_color',
+    'field.storage.paragraph.field_tint_text_color',
+    'field.storage.paragraph.field_tint_c_initial_tile_posts',
+    'field.field.paragraph.tint_component.field_activate_tint_custom',
+    'field.field.paragraph.tint_component.field_tint_c_initial_tile_posts',
+    'field.field.paragraph.dsu_tint.field_tint_customizations',
+    'field.storage.paragraph.field_tint_c_grid_initial_posts',
+    'field.field.paragraph.tint_component.field_tint_c_grid_initial_posts',
+    'field.storage.paragraph.field_tint_c_overlay_bg',
+    'field.storage.paragraph.field_overlay_text_color',
+    'field.storage.paragraph.field_ltint_c_ink_open_method',
+    'field.field.paragraph.tint_component.field_tint_c_overlay_bg',
+    'field.field.paragraph.tint_component.field_overlay_text_color',
+    'field.field.paragraph.tint_component.field_ltint_c_ink_open_method',
+    'field.storage.paragraph.field_dektop_t_slides_in_row',
+    'field.field.paragraph.tint_component.field_dektop_t_slides_in_row',
+  ];
+
+  foreach ($config_names as $config_name) {
+    \Drupal::configFactory()->getEditable($config_name)->delete();
+  }
+}
