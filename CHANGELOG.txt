@@ -1,19 +1,81 @@
-## 1.0.x (May 24, 2024)
+# Changelog
 
-- Updated help text for fields and the order of all fields.
-- Current module will not be working as independent module, the main goal is expand dsu_tint
+## 2.5.0
+- Change field type category name by category ID for Drupal 10.2
 
-## Steps:
-- Check Lightnest Components: Tint module should enable on your site.
-- Install "TINT Connector Styles" (ln_tint_connector_styles) module.
-- Go to "/node/add/dsu_component_page"
-- Choose "Add paragraph as Content: Tint" under components field.
--
-- Add details for Data personalization Id and Data ID recieved from TINT, in tab TINT Customization select activate acheckbox and set up all needed fields.
-- Click on save.
+## 2.4.0
+- Prepare module for Lightnest browser
+- Modify text files to follow the rules of markdown characters limit
+
+## 2.3.1
+- Fix for add jquery dependency
+- Do not overwrite existing site configurations
+
+## 2.3.0
+- Prepare for Drupal 10
+- Clean and updated dependencies
+- Remove seckit dependency
+
+## 2.2.5
+- Move admin base path to module dsu_core
+
+## 2.2.4
+- Fix template for display all information available
+
+## 2.2.3
+- Fix Seckit error install when config is empty
+
+## 2.2.2
+- Fix Seckit error on clean installation
+
+## 2.2.1
+- rel attribute added if target exist on anchor tag.
+- Enabling the Adimo module, as a developer add some permissions in the Seckit
+  module.
 
 ##Validation
-- Every field has help text and that should end without dot.
-- Order of fields would be Headline,Intro text,Data ID, Data personalization ID,
-  Data Columns, Height, Data Expand, Data Clickformore, Data Infinitescroll,
-  Tags, Section ID
+- Add the component on a page and validate.
+
+## 2.1.9
+- Added 2 new fields (Custom Button HTML and Adimo Widget Custom CSS) on Adimo
+  Mass uploder form.
+- Agency/market can change button label and can add new css for Admimo widget
+  button.
+
+## 2.1.8
+- Added widget style selection field on Adimo Mass uploder form.
+- Any agency/market can choose Adimo widget style for csv data.
+
+## 2.1.7
+- Adimo multilingual widget rendering.
+- We added one dynamic variable language for getting the current language code
+  in all twigs files.
+- Any agency can override the twig and add same variable to get current
+  language widget.
+- Please go through the twig that is in under template folder and get example
+  of using language in onclick method.
+
+## 2.1.6
+- Added No cookie consent policy options tracking in each product.
+
+## Steps:
+- run update.php or drush updb -y to get the changes in schema.
+- Clear drupal cache to get all code changes.
+
+
+## 2.1.2 (May 14, 2020)
+
+- Created new custom html field in field settings to override exiting default
+  template for Enhance Recipe Lightbox
+
+
+## Steps:
+- Uninstall old module first because we change schema of field settings.
+- Install new adimo 2.1.2 version.
+- Create field same adimo type.
+- Create and configure settings with Custom HTML settings.
+
+
+##Validation
+- Go to node/add/content and you will Custom HTML fields in each adimo fields
+  settings widget.

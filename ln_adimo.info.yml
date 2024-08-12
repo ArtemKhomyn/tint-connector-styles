@@ -1,0 +1,11 @@
+name: 'Lightnest Adimo Integration'
+description: 'The Adimo Buy Now connector offers a range of displays for buy now button functionality.'
+package: 'Lightnest'
+type: module
+version: 2.5.0
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:field
+  - migrate_source_csv:migrate_source_csv
+  - lightnest:dsu_core
+configure: ln_adimo.migrate.admin.form

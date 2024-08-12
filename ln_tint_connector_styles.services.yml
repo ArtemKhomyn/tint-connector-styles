@@ -1,4 +1,0 @@
-services:
-  ln_tint_connector_styles.set_tint_params:
-    class: \Drupal\ln_tint_connector_styles\Controller\TintParamsController
-    arguments: ['@entity_type.manager', '@current_route_match']
